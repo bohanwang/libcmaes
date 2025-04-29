@@ -87,13 +87,6 @@ inline const Scalar operator() (Index, Index = 0) const { return norm(rng); }
 inline void seed(const uint64_t &s) { rng.seed(s); }
     };
 
-  template<typename Scalar>
-    std::mt19937 scalar_normal_dist_op<Scalar>::rng;
-    
-  template<typename Scalar>
-    struct functor_traits<scalar_normal_dist_op<Scalar> >
-    { enum { Cost = 50 * NumTraits<Scalar>::MulCost, PacketAccess = false, IsRepeatable = false }; };
-
     template<typename Scalar>
       std::mt19937 scalar_normal_dist_op<Scalar>::rng;
       
